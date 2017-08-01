@@ -20,7 +20,6 @@ includes:
  - topup/check-user_en
  - topup/get-balance_en
  - topup/authorization_en
- - topup/statuses_en
  - topup/errors_en
 
 ---
@@ -29,23 +28,23 @@ includes:
 
 ###### Last update: 2017-07-27 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/topup_en.html.md)
 
-API выплат на кошельки предназначено для платежных агентов КИВИ Банк (АО), позволяет зачислять деньги на кошельки пользователей (балансы учетных записей клиентов в системе Visa QIWI Кошелек).
+Top-Up API is intended for merchants or payment service providers (PSP) who need to send money back to Visa QIWI Wallet users.
 
-## Что позволяет протокол
+## What API allows
 
-1. Переводить деньги клиентам Visa QIWI Кошелек - [pay](#payment).
-2. Проверять существование клиентов в сервисе Visa QIWI Кошелек - [check-user](#check-user).
-3. Следить за балансом на агентском счете для выплат - [ping](#get-balance).
+1. Send money to Visa QIWI Wallet users - [pay](#payment).
+2. Check the user registration in Visa QIWI Wallet service - [check-user](#check-user).
+3. Monitor the agent's balance - [ping](#get-balance).
 
-## Как это работает
+## How it works
 
-1. Пользователь передает вам сумму пополнения и номер Visa QIWI Кошелька, который нужно пополнить.
-2. Вы отправляете запрос в Top-Up API QIWI Кошелька на пополнение этого кошелька.
-3. Вы проверяете текущий статус платежа. Платеж должен принять финальный статус. 
-4. При успешном финальном статусе платежа средства автоматически перечисляются на баланс кошелька пользователя с вашего агентского счета.
-5. При неуспешном финальном статусе платежа вы возвращаете средства пользователю.
+1. A user provide you and Visa QIWI Wallet account and money amount to top-up.
+2. You send a request to QIWI Wallet Top-Up API to top-up the account.
+3. You check the payment's current status till it becomes final. 
+4. On successful status, money is transferred from your agent's account to the user's Visa QIWI Wallet account.
+5. On unsuccessful status, money is returned to the user.
 
-По вопросам интеграции и сотрудничества пишите на <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>.
+Please contact us on <a href="mailto:bss@qiwi.com">bss@qiwi.com</a> for integration and cooperation.
 
 # API Structure {#general}
 

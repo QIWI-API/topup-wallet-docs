@@ -20,7 +20,6 @@ includes:
  - topup/check-user_ru
  - topup/get-balance_ru
  - topup/authorization_ru
- - topup/statuses_ru
  - topup/errors_ru
 
 ---
