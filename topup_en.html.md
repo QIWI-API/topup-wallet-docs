@@ -11,7 +11,7 @@ language_tabs:
   - xml: XML
 
 toc_footers:
- - <a href='/'>Main page</a>
+ - <a href='/index-en.html'>Home page</a>
  - <a href='mailto:api_help@qiwi.com'>Feedback</a>
 
 includes:
@@ -38,7 +38,7 @@ Top-Up API is intended for merchants or payment service providers (PSP) who need
 
 ## How it works
 
-1. A user provide you and Visa QIWI Wallet account and money amount to top-up.
+1. A user provides you a Visa QIWI Wallet account and money amount to top-up.
 2. You send a request to QIWI Wallet Top-Up API to top-up the account.
 3. You check the payment's current status till it becomes final. 
 4. On successful status, money is transferred from your agent's account to the user's Visa QIWI Wallet account.
@@ -80,10 +80,10 @@ To top up user account in Visa QIWI Wallet, the Agent specifies user’s mobile 
 
 The interaction of the Agent’s system with Visa QIWI Wallet should go as follows.
 
-![Top-up logic to be implemented by the Agent’s system](images/topup_flow.jpg)
+![Top-up logic to be implemented by the Agent’s system](/images/topup_flow.jpg)
 
 <aside class="notice">Client availability check is not necessary for payment registration. When payment is registered, client is created automatically when absent in Visa QIWI Wallet system.</aside>
 
 The Agent system should implement the logic shown in the flowchart below. Some details are omitted from the flowchart for readability, particularly retrying requests to Visa QIWI Wallet in case of non-fatal error.
 
-![Interaction between Agent and Visa QIWI Wallet](images/topup_en.jpg)
+![Interaction between Agent and Visa QIWI Wallet](/images/topup_en.jpg)
