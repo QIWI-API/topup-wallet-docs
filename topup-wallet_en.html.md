@@ -15,12 +15,12 @@ toc_footers:
  - <a href='mailto:api_help@qiwi.com'>Feedback</a>
 
 includes:
- - topup/topup_en
- - topup/topup-status_en
- - topup/check-user_en
- - topup/get-balance_en
- - topup/authorization_en
- - topup/errors_en
+ - topup-wallet/topup_en
+ - topup-wallet/topup-status_en
+ - topup-wallet/check-user_en
+ - topup-wallet/get-balance_en
+ - topup-wallet/authorization_en
+ - topup-wallet/errors_en
 
 ---
 

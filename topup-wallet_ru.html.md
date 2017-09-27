@@ -16,12 +16,12 @@ toc_footers:
  - <a href='mailto:api_help@qiwi.com'>Обратная связь</a>
 
 includes:
- - topup/topup_ru
- - topup/topup-status_ru
- - topup/check-user_ru
- - topup/get-balance_ru
- - topup/authorization_ru
- - topup/errors_ru
+ - topup-wallet/topup_ru
+ - topup-wallet/topup-status_ru
+ - topup-wallet/check-user_ru
+ - topup-wallet/get-balance_ru
+ - topup-wallet/authorization_ru
+ - topup-wallet/errors_ru
 
 ---
 
