@@ -27,7 +27,7 @@ includes:
 
 # Введение {#introduction}
 
-###### Последнее обновление: 2017-07-11 | [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/topup_ru.html.md)
+###### Последнее обновление: 2017-07-11 | [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-docs/blob/master/topup-wallet_ru.html.md)
 
 API выплат на кошельки предназначено для платежных агентов КИВИ Банк (АО), позволяет зачислять деньги на кошельки пользователей (балансы учетных записей клиентов в системе Visa QIWI Кошелек).
 
