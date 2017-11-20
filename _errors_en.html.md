@@ -1,13 +1,13 @@
 # Payment Statuses {#statuses}
 
-###### Last update: 2017-07-26 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_errors_en.html.md)
+###### Last update: 2017-11-14 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_errors_en.html.md)
 
-Visa QIWI Wallet server may return payment status from the following ranges:
+QIWI Wallet server may return payment status from the following ranges:
 
 Status | Description | Final?
 -----|---------|-------------
 \-1	| The payment is not registered due to temporary error. Please repeat the request later.|
-0\-49|The payment is accepted but waiting for the confirmation from Visa QIWI Wallet system. Contact Visa QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a> | \-
+0\-49|The payment is accepted but waiting for the confirmation from QIWI Wallet system. Contact QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a> | \-
 50\-59	| The payment is being processed. The amount has been charged from the Agent’s account.| \-
 50|The payment is accepted for processing| \-
 52|The amount is being credited to the user account| \-
@@ -25,20 +25,20 @@ Error code| Error description
 -----|--------
 0| No errors
 155|Invalid service code (`service-id` in top-up request should be `99`)
-215| Top-up request has payment transaction number (`transaction-number`) that is already registered in Visa QIWI Wallet but other parameters differ. Payment parameters have to be in agreement with this payment transaction number.
+215| Top-up request has payment transaction number (`transaction-number`) that is already registered in QIWI Wallet but other parameters differ. Payment parameters have to be in agreement with this payment transaction number.
 220|Not enough funds available on the Agent’s account to process payment
 241|Payment amount is less than allowed
 242|Payment amount is greater than allowed
-298|User account with specified phone number is not registered in Visa QIWI Wallet system. Invalid phone number as user account ID.
-300|Unknown processing error. Contact Visa QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>
+298|User account with specified phone number is not registered in QIWI Wallet system. Invalid phone number as user account ID.
+300|Unknown processing error. Contact QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>
 316|Authorization from the blocked agent
 319|Top-up of this user account is blocked
 700|Monthly limit on operations is exceeded 
-702|Visa QIWI Wallet client’s account balance limit is exceeded
+702|QIWI Wallet client’s account balance limit is exceeded
 
-If there are errors appeared that is not described in this table please contact Visa QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>.
+If there are errors appeared that is not described in this table please contact QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>.
 
-# Visa QIWI Wallet Error Codes {#tech_error}
+# QIWI Wallet Error Codes {#tech_error}
 
 Error code|Description|Fatal?
 ----|------|---------
@@ -48,7 +48,7 @@ Error code|Description|Fatal?
 300|Unknown error. Repeat the request|\-
 339|Sender IP address blocked|\+
 
-If there are errors appeared that is not described in this table please contact Visa QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>.
+If there are errors appeared that is not described in this table please contact QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>.
 
 # XML Data Format {#params-types}
 

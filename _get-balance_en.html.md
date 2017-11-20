@@ -1,8 +1,8 @@
 # Balance Check Request {#get-balance}
 
-###### Last update: 2017-07-27 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_get-balance_ru.html.md)
+###### Last update: 2017-11-14 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_get-balance_ru.html.md)
 
-Agent can check the balance of the Agent’s account in Visa QIWI Wallet system at any time using balance check request.
+Agent can check the balance of the Agent’s account in QIWI Wallet system at any time using balance check request.
 
 ## Request format
 
@@ -20,8 +20,8 @@ Parameter|Description
 -|-
 *request*| A grouping tag
 *request-type* | Request type (balance check: `ping`)
-*terminal-id* | Agent ID in Visa QIWI Wallet system
-*extra name="password"* | Agent’s password in Visa QIWI Wallet system
+*terminal-id* | Agent ID in QIWI Wallet system
+*extra name="password"* | Agent’s password in QIWI Wallet system
 
 ## Response format
 
@@ -42,5 +42,5 @@ Tag|Description|Attributes
 --------|------|---------
 *response*| A grouping tag|No
 *result-code* | [The result code](#tech_error) of the request processing | `fatal` – logical flag indicating fatal (unchanged) error.
-*balances*|A grouping tag. The child tags are current balances of the Agent's active accounts in Visa QIWI Wallet system |No
+*balances*|A grouping tag. The child tags are current balances of the Agent's active accounts in QIWI Wallet system |No
 *balance* | Balance of the Agent's account| `code` - currency of the Agent's account (numeric code of currency according  to ISO 4217)

@@ -34,7 +34,7 @@ The Agent has to give the public key to QIWI representative and use the private 
         * `MD5withRSA` - if MD5 used,
         * `SHA1withRSA` - if SHA1 used.
 
-<aside class="notice">When authorizing by digital signature, <extra name="password"></extra> tag is not required.</aside>
+<aside class="notice">When authorizing by digital signature, <i>extra name="password"</i> tag is not required.</aside>
 
 
 ## Using client certificate {#cert}
