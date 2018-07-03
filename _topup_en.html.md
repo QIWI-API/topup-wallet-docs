@@ -96,7 +96,7 @@ Tag|Description|Attributes
 --------|------|---------
 *response*	| A grouping tag|No
 *payment* | Details of the accepted payment| `status` – [payment status](#statuses) in QIWI Wallet system;
- | |`txn_id` – transaction ID in QIWI Wallet system;
+ | |`txn_id` – transaction ID in QIWI Wallet system. **If empty, the payment was not registered due to temporary error. You have to repeat the request later.**;
  | |`transaction-number` – transaction number in the Agent’s system;
  | |`result-code` – payment processing [error code](#error);
  | |`final-status` – logical flag indicating if payment’s status is final;
