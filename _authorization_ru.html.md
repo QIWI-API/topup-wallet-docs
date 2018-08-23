@@ -66,3 +66,7 @@
 Запросы должны отправляться по адресу:
 
 `https://private-api.qiwi.com/xml/topup.jsp`
+
+Пример запроса с сертификатом:
+
+`user@pc:~/station$ openssl s_client -connect private-api.qiwi.com/xml/topup.jsp:443 -showcerts -CAfile ./CA/our_CA -cert ./my_cert -key ./private_key.pem`

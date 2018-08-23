@@ -38,8 +38,8 @@ The Agent has to give the public key to QIWI representative and use the private 
 
 
 ## Using client certificate {#cert}
-	 
-To authorize requests by client certificate, you should send them to 
+
+To authorize requests by client certificate, you should send them to
 
 `https://private-api.qiwi.com/xml/topup.jsp`
 
@@ -55,6 +55,9 @@ To use client certificate, the Agent has to give request for a certificate and p
 
 `openssl rsa -in private_key.pem -pubout -out public.key`
 
-* Give obtained public key and the request for a certificate to QIWI representative. 
+* Give obtained public key and the request for a certificate to QIWI representative.
 * CA server certificate and client certificate to use in requests are returned in response.
 
+Sample request with certificate:
+
+` user@pc:~/private-api$ openssl s_client -connect private-api.qiwi.com/xml/topup.jsp:443 -showcerts -CAfile ./CA/our_CA -cert ./my_cert -key ./private_key.pem`
