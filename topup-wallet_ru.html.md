@@ -13,7 +13,7 @@ language_tabs:
 toc_footers:
  - <a href='/'>На главную</a>
  - <a href='https://static.qiwi.com/business/qiwi_bank/clients/doc/paydealerprotocolint.pdf'>Документация PDF</a> 
- - <a href='mailto:api_help@qiwi.com'>Обратная связь</a>
+ - <a href='mailto:bss@qiwi.com'>Обратная связь</a>
 
 includes:
  - topup-wallet/authorization_ru
