@@ -71,7 +71,7 @@
     <ccy>643</ccy>
   </from>
   <to>
-    <service-id>99</service-id>
+    <service-id>34020</service-id>
     <amount>15.00</amount>
     <ccy>643</ccy>
     <account-number>4111********1123</account-number>
