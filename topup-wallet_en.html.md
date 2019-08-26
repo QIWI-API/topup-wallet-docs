@@ -30,7 +30,7 @@ includes:
 
 Top-Up API is intended for merchants or payment service providers (PSP) who need to send money back to QIWI Wallet users.
 
-## What API allows
+## What API allows you
 
 1. Send money to QIWI Wallet users - [pay](#payment).
 2. Check the user registration in QIWI Wallet service - [check-user](#check-user).
@@ -40,7 +40,7 @@ Top-Up API is intended for merchants or payment service providers (PSP) who need
 
 1. A user provides you a QIWI Wallet account and money amount to top-up.
 2. You send a request to QIWI Wallet Top-Up API to top-up the account.
-3. You check the payment's current status till it becomes final. 
+3. You check the payment's current status till it becomes final.
 4. On successful status, money is transferred from your agent's account to the user's QIWI Wallet account.
 5. On unsuccessful status, money is returned to the user.
 
@@ -48,7 +48,7 @@ Please contact us on <a href="mailto:bss@qiwi.com">bss@qiwi.com</a> for integrat
 
 # API Structure {#general}
 
-The Agent’s system uses HTTPS protocol to send POST requests to 
+The Agent’s system uses HTTPS protocol to send POST requests to
 
 `https://api.qiwi.com/xml/topup.jsp`
 
@@ -60,7 +60,7 @@ Agent must make decision on successful or unsuccessful payment processing based 
 
 Agent must assign a unique identifier for each payment completely characterized by a set of parameters: amount, currency, QIWI Wallet user account, service identifier.
 
-Agent will be notified if any update of the API is taken place. 
+Agent will be notified if any update of the API is taken place.
 
 See section Implementation Guidelines for the algorithm to be implemented at the Agent’s side.
 
