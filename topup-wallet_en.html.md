@@ -11,7 +11,7 @@ language_tabs:
   - xml: XML
 
 toc_footers:
- - <a href='/index-en.html'>Home page</a>
+ - <a href='/en/'>Home page</a>
  - <a href='mailto:bss@qiwi.com'>Feedback</a>
 
 includes:
