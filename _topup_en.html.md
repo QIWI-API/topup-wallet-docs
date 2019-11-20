@@ -2,23 +2,25 @@
 
 ###### Last update: 2017-11-14 | [Edit on Github](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_topup_en.html.md)
 
-QIWI Wallet top-ups are payment transactions within QIWI Wallet system that debit Agent accounts and credit user accounts.
+QIWI Wallet top-ups are payment transactions within QIWI Wallet system that debit Agent account and credit user QIWI Wallet account.
 
 If the specified user account does not exist, QIWI Wallet system creates it automatically while processing the top-up request.
 
-All payment transactions, including top-up requests, are processed asynchronously. A request that is accepted successfully may then fail. 
+All payment transactions, including top-up requests, are processed asynchronously. A request that is accepted successfully may then fail.
 
 The Agent’s system should [query payment status](#status) from QIWI Wallet periodically (no more than once in 10 minutes), until a final status code, successful or unsuccessful, is received.
 
-The Agent’s system should process errors as follows. 
+The Agent’s system should process errors as follows.
 
 In case of network error (connection or response timeout) or HTTP error (HTTP status code other than 200, or empty HTTP response), incorrect XML-documents (no required tag/attribute) the Agent’s system should request payment status until final successful or unsuccessful payment status. Transaction status information is inaccessible in case of these errors, so the Agent should not denies the payment on its side.
 
-Fatal errors mean that sending a secondary request with the same parameters will result in the same error. Fatal errors are often caused by invalid configuration and require manual intervention. 
+Fatal errors mean that sending a secondary request with the same parameters will result in the same error. Fatal errors are often caused by invalid configuration and require manual intervention (contact QIWI Wallet Support by <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>).
 
 In case of fatal error, the Agent’s system may either keep repeating requests, or pause repeating the request until the configuration is corrected. Agent’s system needs not to deny payment as transaction status is unknown on request processing error.
 
 ## Request format {#payment-req}
+
+### Request parameters
 
 ~~~xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -42,8 +44,6 @@ In case of fatal error, the Agent’s system may either keep repeating requests,
 	</auth>
 </request>
 ~~~
-
-### Request parameters
 
 Tag|Description
 --------|------
@@ -92,7 +92,7 @@ Tag|Description
 
 Response data:
 
-Tag|Description|Attributes	
+Tag|Description|Attributes
 --------|------|---------
 *response*	| A grouping tag|No
 *payment* | Details of the accepted payment| `status` – [payment status](#statuses) in QIWI Wallet system;
@@ -125,6 +125,6 @@ If QIWI Wallet server is unable to process the top-up request, the response is a
 
 Response data:
 
-Tag|Description|Attributes	
+Tag|Description|Attributes
 --------|------|---------
 *result-code* | Request processing error [code](#tech_error)| `fatal` – logical flag indicating if payment processing error is fatal

@@ -6,6 +6,8 @@ QIWI Wallet Top-Up API provides Agent with ability to check if the user is regis
 
 ## Request format
 
+### Request parameters
+
 ~~~xml
 <?xml version="1.0" encoding="utf-8"?>
 <request>
@@ -17,8 +19,6 @@ QIWI Wallet Top-Up API provides Agent with ability to check if the user is regis
 </request>
 ~~~
 
-### Request parameters
-
 Tag|Description
 ----|-------
 *request* | A grouping tag. The child tags contain payment parameters
@@ -29,6 +29,8 @@ Tag|Description
 *extra name="ccy"* | Currency of user account balance. Optional parameter (numeric or character code of currency according  to ISO 4217), in this case QIWI Wallet system checks whether user has balance in this currency.
 
 ## Response format
+
+### Successful request processing
 
 ~~~xml
 <response>
@@ -44,3 +46,18 @@ Tag|Description|Attributes
 *result-code* | [The result code](#tech_error) of the request processing | `fatal` – logical flag indicating fatal (unchanged) error.
 *exist* | Flag indicating whether the user is registered in QIWI Wallet system. The flag is included only in case of successful request processing (error code `0`). The flag may have one of the following values:<br>`0` – the user is not registered in QIWI Wallet system (if `extra name="ccy"` tag is specified in the request, then the user does not have balance in the specified currency);<br>`1` – the user is registered in QIWI Wallet system (if `extra name="ccy"` tag is specified in the request, then the user has balance in the specified currency).|No.
 
+### Error response
+
+If QIWI Wallet server is unable to process the request, the response is as follows.
+
+~~~xml
+<response>
+  <result-code fatal="false">300</result-code>
+</response>
+~~~
+
+Response data:
+
+Tag|Description|Attributes
+--------|------|---------
+*result-code* | Request processing error [code](#tech_error)| `fatal` – logical flag indicating if request processing error is fatal

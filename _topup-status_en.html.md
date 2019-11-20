@@ -1,4 +1,4 @@
-# Payment Status Check {#status}
+# Transaction Status Check {#status}
 
 ###### Last update: 2017-11-14 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_topup-status_en.html.md)
 
@@ -8,15 +8,18 @@ When registered in QIWI Wallet system, a payment passes through a set of states 
 
 The request allows obtaining current payment status. Repeating request for the same payment should be used no more than once in 10 minutes.
 
-In case of non-fatal [error](#tech_error) or non-final [payment status](#statuses) received in response to status request, the Agent’s system should repeat the payment status check request.
+In case of non-fatal [error](#tech_error) or non-final [payment status](#statuses) received in response to the status request, the Agent’s system should repeat the  status check request.
 
-Fatal errors mean that sending a secondary request with the same parameters will result in the same error. 
+Fatal errors mean that sending a secondary request with the same parameters will result in the same error.
 
 Fatal errors are often caused by invalid configuration and require manual intervention. In case of fatal error, the Agent’s system may either keep repeating requests, or pause repeating the request until the configuration is corrected. Agent’s system needs not to deny payment as transaction status is unknown on request processing error. Transaction status information is inaccessible in case of these errors, so the Agent should not denies the payment on its side.
 
 In case of network error (connection or response timeout) or HTTP error (HTTP status code other than `200`, or empty HTTP response), incorrect XML-documents (no required tag/attribute) the Agent’s system should repeat request. Transaction status information is inaccessible in case of these errors, so the Agent should not denies the payment on its side.
 
 ## Request format
+
+
+### Request parameters
 
 ~~~xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -34,8 +37,6 @@ In case of network error (connection or response timeout) or HTTP error (HTTP st
     </status>
   </request>
 ~~~
-
-### Request parameters
 
 Tag|Description
 -|-
@@ -56,7 +57,7 @@ Tag|Description
 ~~~xml
 <response>
   <result-code fatal="false">0</result-code>
-  <payment status='60' transaction-number='12345678' txn_id='759640439' result-сode='0' final-status='true'  fatal-error='false' txn-date='12.03.2012 14:24:38'  />
+  <payment status='60' transaction-number='12345678' txn_id='759640439' result-сode='0' final-status='true' fatal-error='false' txn-date='12.03.2012 14:24:38'  />
   <balances>
     <balance code="643">90.79</balance>
     <balance code="840">0.00</balance>
@@ -66,7 +67,7 @@ Tag|Description
 
 Response data:
 
-Tag|Description|Attributes	
+Tag|Description|Attributes
 --------|------|---------
 *response*	| A grouping tag|No
 *payment* | Details of the checked payment. When several payments status check is requested, response contains corresponding `payment` tags. When payment in the request is not found in QIWI Wallet system, corresponding `payment` tag will be absent in the response. You have to repeat payment status check request for that payment.| `status` – [payment status](#statuses) in QIWI Wallet system;
@@ -91,7 +92,6 @@ If QIWI Wallet server is unable to process payment status request, the response 
 
 Response data:
 
-Tag|Description|Attributes	
+Tag|Description|Attributes
 --------|------|---------
 *result-code* | Request processing error [code](#tech_error)| `fatal` – logical flag indicating if request processing error is fatal
-

@@ -1,7 +1,5 @@
 # Payment Statuses {#statuses}
 
-###### Last update: 2017-11-14 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_errors_en.html.md)
-
 QIWI Wallet server may return payment status from the following ranges:
 
 Status | Description | Final?
@@ -24,17 +22,12 @@ Error codes for unsuccessful final states are listed in [payment processing resu
 Error code| Error description
 -----|--------
 0| No errors
-155|Invalid service code (`service-id` in top-up request should be `99`)
-215| Top-up request has payment transaction number (`transaction-number`) that is already registered in QIWI Wallet but other parameters of the transaction differ. Transaction parameters have to be in agreement with this payment transaction number.
+155|Invalid service code (`service-id` in top-up request should be `34020`)
+215| Top-up request has payment transaction number (`transaction-number`) that is already registered in QIWI Wallet but other  parameters of the transaction differ. Transaction parameters must be in agreement with this payment transaction number.
 220|Not enough funds available on the Agent’s account to process payment
-241|Payment amount is less than allowed
 242|Payment amount is greater than allowed
-298|User account with specified phone number is not registered in QIWI Wallet system. Invalid phone number as user account ID.
 300|Unknown processing error. Contact QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>
 316|Authorization from the blocked agent
-319|Top-up of this user account is blocked
-700|Monthly limit on operations is exceeded
-702|QIWI Wallet client’s account balance limit is exceeded
 
 If there are errors appeared that is not described in this table please contact QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>.
 
@@ -58,9 +51,9 @@ Tag/attribute|Data type
 `terminal-id`|Integer positive
 `transaction-number`|Integer positive up to 20 digits
 `amount`|Decimal (with two fractional digits separated by point)
-`to/service-id`	| Constant (`99`)
+`to/service-id`	| Constant (`34020` for payment card top up, `99` for QIWI Wallet top up)
 `from/service-id`|Integer positive
-`account-number`|International phone number (without leading `+` sign)
+`account-number`|For QIWI Wallet top up transactions - International phone number (without leading `+` sign);<br>For payment cards top up transactions - card number, only 0-9 digits without spaces
 `final-status`|Logical (`true/false`)
 `fatal-error`|Logical (`true/false`)
 `txn-date`| Timestamp formatted as:<br>`dd.MM.yyyy HH:mm:ss`

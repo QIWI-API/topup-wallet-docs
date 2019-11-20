@@ -6,6 +6,8 @@ Agent can check the balance of the Agent’s account in QIWI Wallet system at an
 
 ## Request format
 
+### Request parameters
+
 ~~~xml
 <request>
 <request-type>ping</request-type>
@@ -13,8 +15,6 @@ Agent can check the balance of the Agent’s account in QIWI Wallet system at an
 <extra name="password">password</extra>
 </request>
 ~~~
-
-### Request parameters
 
 Parameter|Description
 -|-
@@ -24,6 +24,8 @@ Parameter|Description
 *extra name="password"* | Agent’s password in QIWI Wallet system
 
 ## Response format
+
+### Successful request processing
 
 ~~~xml
 <response>
@@ -38,9 +40,25 @@ Parameter|Description
 
 Response data:
 
-Tag|Description|Attributes	
+Tag|Description|Attributes
 --------|------|---------
 *response*| A grouping tag|No
 *result-code* | [The result code](#tech_error) of the request processing | `fatal` – logical flag indicating fatal (unchanged) error.
 *balances*|A grouping tag. The child tags are current balances of the Agent's active accounts in QIWI Wallet system |No
 *balance* | Balance of the Agent's account| `code` - currency of the Agent's account (numeric code of currency according  to ISO 4217)
+
+### Error response
+
+If QIWI Wallet server is unable to process the request, the response is as follows.
+
+~~~xml
+<response>
+  <result-code fatal="false">300</result-code>
+</response>
+~~~
+
+Response data:
+
+Tag|Description|Attributes
+--------|------|---------
+*result-code* | Request processing error [code](#tech_error)| `fatal` – logical flag indicating if request processing error is fatal
