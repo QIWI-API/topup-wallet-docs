@@ -1,6 +1,6 @@
 # Payment Statuses {#statuses}
 
-###### Last update: 2017-11-14 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_errors_en.html.md)
+###### Last update: 2020-07-10 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_errors_en.html.md)
 
 QIWI Wallet server may return payment status from the following ranges:
 
@@ -25,6 +25,7 @@ Error code| Error description
 -----|--------
 0| No errors
 155|Invalid service code (`service-id` in top-up request should be `99`)
+204 | Insufficient wallet identification status for payment
 215| Top-up request has payment transaction number (`transaction-number`) that is already registered in QIWI Wallet but other parameters of the transaction differ. Transaction parameters have to be in agreement with this payment transaction number.
 220|Not enough funds available on the Agent’s account to process payment
 241|Payment amount is less than allowed
@@ -67,6 +68,8 @@ Tag/attribute|Data type
 `balance`|Decimal (with two fractional digits separated by point)
 `fatal`|Logical (`true/false`)
 `exist`|`0/1`
+`income_wire_transfer`|`0/1`
 `"password"`|Text
 `"comment"`|Text (up to 1000 symbols)
 `"phone"`|International phone number (without leading `+` sign)
+`"deposit-possible"`|`0/1`

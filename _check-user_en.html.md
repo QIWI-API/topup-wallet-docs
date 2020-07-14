@@ -1,6 +1,6 @@
 # User Availability Check {#check-user}
 
-###### Last update: 2017-11-15 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_check-user_en.html.md)
+###### Last update: 2020-07-10 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_check-user_en.html.md)
 
 QIWI Wallet Top-Up API provides Agent with ability to check if the user is registered in QIWI Wallet system. User availability is not a requirement for a payment registration. If the specified user account does not exist, it will be created upon top-up request.
 
