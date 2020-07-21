@@ -54,7 +54,7 @@ Tag/attribute|Data type
 `amount`|Decimal (with two fractional digits separated by point)
 `to/service-id`	| Constant (`34020` for payment card top up, `99` for QIWI Wallet top up)
 `from/service-id`|Integer positive
-`account-number`|For QIWI Wallet top up transactions - International phone number (without leading `+` sign);<br>For payment cards top up transactions - card number, only 0-9 digits without spaces
+`to/account-number`|For QIWI Wallet top up transactions - International phone number (without leading `+` sign);<br>For payment cards top up transactions - card number, only 0-9 digits without spaces
 `final-status`|Logical (`true/false`)
 `fatal-error`|Logical (`true/false`)
 `txn-date`| Timestamp formatted as:<br>`dd.MM.yyyy HH:mm:ss`

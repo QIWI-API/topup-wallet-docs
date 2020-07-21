@@ -61,7 +61,7 @@ Tag/attribute|Data type
 `amount`|Decimal (with two fractional digits separated by point)
 `to/service-id`	| Constant (`99`)
 `from/service-id`| Integer positive
-`account-number`| International phone number (without leading `+` sign)
+`to/account-number`| International phone number (without leading `+` sign)
 `final-status`|Logical (`true/false`)
 `fatal-error`|Logical (`true/false`)
 `txn-date`| Timestamp formatted as:<br>`dd.MM.yyyy HH:mm:ss`
