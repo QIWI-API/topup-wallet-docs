@@ -1,4 +1,4 @@
-# Проверка номера клиента {#check-user}
+# Проверка регистрации клиента {#check-user}
 
 ###### Последнее обновление: 2017-11-14 | [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_check-user_ru.html.md)
 

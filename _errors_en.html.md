@@ -60,8 +60,8 @@ Tag/attribute|Data type
 `transaction-number`|Integer positive up to 20 digits
 `amount`|Decimal (with two fractional digits separated by point)
 `to/service-id`	| Constant (`99`)
-`from/service-id`|Integer positive
-`account-number`|International phone number (without leading `+` sign)
+`from/service-id`| Integer positive
+`account-number`| International phone number (without leading `+` sign)
 `final-status`|Logical (`true/false`)
 `fatal-error`|Logical (`true/false`)
 `txn-date`| Timestamp formatted as:<br>`dd.MM.yyyy HH:mm:ss`

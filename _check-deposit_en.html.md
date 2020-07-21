@@ -4,6 +4,8 @@
 
 QIWI Wallet Top-Up API provides Agent with ability to check if the user is registered in QIWI Wallet system and whether its account can be replenished.
 
+If you need only check of the user registration, you can use [another request](#check-user).
+
 ## Request format
 
 ### Request parameters
