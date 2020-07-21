@@ -24,7 +24,7 @@ Error codes for unsuccessful final states are listed in [payment processing resu
 Error code| Error description
 -----|--------
 0| No errors
-155|Invalid service code (`service-id` in top-up request should be `99`)
+155|Invalid service code (tag `to/service-id` in top-up request should be `99`)
 204 | Insufficient wallet identification status for payment
 215| Top-up request has payment transaction number (`transaction-number`) that is already registered in QIWI Wallet but other parameters of the transaction differ. Transaction parameters have to be in agreement with this payment transaction number.
 220|Not enough funds available on the Agent’s account to process payment
