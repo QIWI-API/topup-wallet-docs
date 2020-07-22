@@ -54,6 +54,7 @@
 ### Ответ без ошибок обработки запроса
 
 ~~~xml
+<?xml version="1.0" encoding="utf-8"?>
 <response>
   <result-code fatal="false">0</result-code>
   <payment status='60' transaction-number='12345678' txn_id='759640439' result-сode='0' final-status='true'  fatal-error='false' txn-date='12.03.2012 14:24:38'  />
@@ -84,6 +85,7 @@
 Если сервер не смог обработать запрос на получение статуса платежа, он возвращает xml-ответ с описанием произошедшей ошибки.
 
 ~~~xml
+<?xml version="1.0" encoding="utf-8"?>
 <response>
   <result-code fatal="false">300</result-code>
 </response>

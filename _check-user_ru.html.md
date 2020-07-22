@@ -36,6 +36,7 @@
 
 
 ~~~xml
+<?xml version="1.0" encoding="utf-8"?>
 <response>
   <result-code fatal="false">0</result-code>
   <exist>1</exist>
@@ -54,6 +55,7 @@
 Если сервер не смог обработать запрос, он возвращает xml-ответ с описанием произошедшей ошибки.
 
 ~~~xml
+<?xml version="1.0" encoding="utf-8"?>
 <response>
   <result-code fatal="false">300</result-code>
 </response>

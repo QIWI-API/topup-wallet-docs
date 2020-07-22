@@ -73,6 +73,7 @@ Tag|Description
 ### Successful request processing
 
 ~~~xml
+<?xml version="1.0" encoding="utf-8"?>
 <response>
 <payment status='60' txn_id='6060' transaction-number='12345678' result-code='0' final-status='true' fatal-error='false' txn-date='02.03.2011 14:35:46'  >
   <from>
@@ -119,9 +120,10 @@ Tag|Description|Attributes
 
 ### Error response
 
-If QIWI Wallet server is unable to process the top-up request, the response is as follows:
+If QIWI Wallet server is unable to process the request, the response is as follows:
 
 ~~~xml
+<?xml version="1.0" encoding="utf-8"?>
 <response>
   <result-code fatal="false">300</result-code>
 </response>
@@ -131,4 +133,4 @@ Response data:
 
 Tag|Description|Attributes
 --------|------|---------
-*result-code* | Request processing error [code](#tech_error)| `fatal` – logical flag indicating if payment processing error is fatal
+*result-code* | Request processing error [code](#tech_error)| `fatal` – logical flag indicating if request processing error is fatal

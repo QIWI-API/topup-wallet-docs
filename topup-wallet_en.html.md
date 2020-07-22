@@ -40,7 +40,7 @@ Top-Up API is intended for merchants or payment service providers (PSP) who need
 ## How it works
 
 1. A user provides you a QIWI Wallet account and money amount to top-up.
-2. You send a [request](#check-deposit) to QIWI Wallet Top-Up API to check if the user is registered in QIWI Wallet system and whether its account can be replenished.
+2. You send a [request](#check-deposit) to QIWI Wallet Top-Up API to check payment possibility.
 3. You send a [request](#payment) to QIWI Wallet Top-Up API to top-up the account.
 4. You [check](#status) the payment's current status till it becomes final.
 5. On successful status, money is transferred from your agent's account to the user's QIWI Wallet account.
@@ -92,11 +92,11 @@ participant Agent
 participant qb as QIWI Wallet Service
 activate Agent  
 activate qb  
-Agent->>qb:Check client registration<br>and ability to top up<br>("check-deposit-possible" request)
+Agent->>qb:Check payment possibility<br>("check-deposit-possible" request)
 qb->>Agent:Response
 deactivate Agent 
 deactivate qb  
-alt Wallet can be replenished
+alt Payment is possible
 Agent->>qb:Request to top-up client's account<br>("pay/auth" request)
 activate Agent  
 activate qb  

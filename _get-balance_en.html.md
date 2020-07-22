@@ -2,13 +2,14 @@
 
 ###### Last update: 2017-11-14 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_get-balance_ru.html.md)
 
-Agent can check the balance of the Agent’s account in QIWI Wallet system at any time using balance check request.
+This API method helps Agent to check the balance of the Agent’s account in QIWI Wallet system.
 
 ## Request format
 
 ### Request parameters
 
 ~~~xml
+<?xml version="1.0" encoding="utf-8"?>
 <request>
 <request-type>ping</request-type>
 <terminal-id>44</terminal-id>
@@ -28,6 +29,7 @@ Parameter|Description
 ### Successful request processing
 
 ~~~xml
+<?xml version="1.0" encoding="utf-8"?>
 <response>
 <result-code fatal="false">0</result-code>
 <balances>
@@ -52,6 +54,7 @@ Tag|Description|Attributes
 If QIWI Wallet server is unable to process the request, the response is as follows.
 
 ~~~xml
+<?xml version="1.0" encoding="utf-8"?>
 <response>
   <result-code fatal="false">300</result-code>
 </response>
