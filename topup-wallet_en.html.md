@@ -52,9 +52,11 @@ Please contact us on <a href="mailto:bss@qiwi.com">bss@qiwi.com</a> for integrat
 
 # API Structure {#general}
 
-The Agent’s system uses HTTPS protocol to send POST requests to
+The Agent’s system in production environment uses HTTPS protocol to send POST requests to
 
 `https://api.qiwi.com/xml/topup.jsp`
+
+<aside class="notice">To get access to the test environment, contact your QIWI support manager.</aside>
 
 All requests and responses are XML documents encoded in UTF-8 in HTTP body. 
 
