@@ -6,7 +6,7 @@ QIWI Wallet server may return payment status from the following ranges:
 
 Status | Description | Final?
 -----|---------|-------------
-\-1	| The payment is not registered due to temporary error. Please repeat the request later.|
+\-1	| The payment is not registered due to temporary error. Please repeat the request later. **If you received status other than -1 in previous top-up request, continue [requesting payment status](#status), until final status is received**|
 0\-49|The payment is accepted but waiting for the confirmation from QIWI Wallet system. Contact QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a> | \-
 50\-59	| The payment is being processed. The amount has been charged from the Agent’s account.| \-
 50|The payment is accepted for processing| \-

@@ -34,15 +34,17 @@ Top-Up API is intended for merchants or payment service providers (PSP) who need
 ## What API allows you
 
 1. Send money to QIWI Wallet users - [pay](#payment).
-2. Check the user registration in QIWI Wallet service - [check-user](#check-user).
-3. Monitor the agent's balance - [ping](#get-balance).
+2. Check the current status of the top-up payment - [status](#status).
+3. Check the payment possibility - [check-deposit-possible](#check-deposit).
+4. Check the user registration in QIWI Wallet service - [check-user](#check-user).
+5. Monitor the agent's balance - [ping](#get-balance).
 
 ## How it works
 
 1. A user provides you a QIWI Wallet account and money amount to top-up.
 2. You send a [request](#check-deposit) to QIWI Wallet Top-Up API to check payment possibility.
 3. You send a [request](#payment) to QIWI Wallet Top-Up API to top-up the account.
-4. You [check](#status) the payment's current status till it becomes final.
+4. You [check](#status) the payment's current status until it becomes final.
 5. On successful status, money is transferred from your agent's account to the user's QIWI Wallet account.
 6. On unsuccessful status, money is returned to the user.
 
@@ -52,25 +54,29 @@ Please contact us on <a href="mailto:bss@qiwi.com">bss@qiwi.com</a> for integrat
 
 # API Structure {#general}
 
-The Agent’s system in production environment uses HTTPS protocol to send POST requests to
-
-`https://api.qiwi.com/xml/topup.jsp`
-
-<aside class="notice">To get access to the test environment, contact your QIWI support manager.</aside>
-
 All requests and responses are XML documents encoded in UTF-8 in HTTP body. 
 
 <aside class="warning">All tags and attributes of the requests described in the document are required (if not specified otherwise for a certain tag/attribute). It is not an API contract violation that any other tags/attributes might be added in responses or requests. Check for updates of the protocol on the Github page</aside>
 
 See [Values Format](#params-types) of XML tags and attributes.
 
-Agent uses [Agent ID and password](#agent_account) to authenticate requests to the API (in `terminal-id` and `extra name="password"` XML tag, respectively). To change password, contact QIWI Wallet staff. The Agent may also use [client certificate](#cert) and [digital signature](#sign) methods to authenticate requests.
+Agent uses [Agent ID and password](#agent_account) to authenticate API requests. Place Agent ID in `terminal-id` and password in `extra name="password"` XML tags, respectively. To change password, contact QIWI Wallet staff. 
+
+To improve the security of information exchange, the Agent may also use [client certificate](#cert) and [digital signature](#sign) methods to authenticate requests.
+
+The Agent’s system in production environment must use HTTPS protocol and send only POST requests to URL
+
+`https://api.qiwi.com/xml/topup.jsp`
+
+When using [client certificate](#cert) for requests authentication, the Agent’s system in production environment must use HTTPS protocol and send only POST requests to URL
+
+`https://private-api.qiwi.com/xml/topup.jsp`
+
+<aside class="notice">To get access to the test environment, contact your QIWI support manager.</aside>
 
 Agent must make decision on successful or unsuccessful payment processing based on transaction status in QIWI Wallet system.
 
 Agent must assign a unique identifier for each payment completely characterized by a set of parameters: amount, currency, QIWI Wallet user account, service identifier.
-
-Agent will be notified if any update of the API is taken place.
 
 See section [Implementation Guidelines](#guidelines) for the algorithm to be implemented at the Agent’s side.
 
@@ -92,16 +98,10 @@ The interaction of the Agent’s system with QIWI Wallet should go as follows.
 sequenceDiagram
 participant Agent
 participant qb as QIWI Wallet Service
-activate Agent  
-activate qb  
 Agent->>qb:Check payment possibility<br>("check-deposit-possible" request)
 qb->>Agent:Response
-deactivate Agent 
-deactivate qb  
 alt Payment is possible
 Agent->>qb:Request to top-up client's account<br>("pay/auth" request)
-activate Agent  
-activate qb  
 qb->>qb:Creating wallet <br>when no account is found
 qb->>Agent:Response (payment status or error)
 Agent->>Agent:Final status?
@@ -111,14 +111,12 @@ Agent->>qb:Check top-up payment status<br>("pay/status" request)
 qb->>Agent:Response with current payment status
 end
 end
-alt Final successful status
+alt Success / Final
 qb->>qb:Funds top-up to client's wallet
-deactivate qb
 end
-alt Final unsuccessful status
+alt Fail / Final
 Agent->>Agent:Return funds to Client
 end
-deactivate Agent
 end
 </div>
 

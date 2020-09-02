@@ -2,19 +2,11 @@
 
 ###### Last update: 2017-11-14 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_topup-status_en.html.md)
 
+When registered in QIWI Wallet system, a payment passes through a set of states with different statuses. Each status is specified by its unique numeric identifier. Payment processing is treated as complete when it reaches a final status. All possible status codes are listed in [Payment statuses](#statuses).
+
 To check if a payment is completed successfully, the Agent’s system should use this API method to query payment status in QIWI Wallet, until a final status code, successful or unsuccessful, is received.
 
-When registered in QIWI Wallet system, a payment passes through a set of states with different statuses. Each status is specified by its unique numeric identifier. Payment processing is treated as complete when it reaches a final status. Status codes are listed in [Payment statuses](#statuses).
-
-The request provides current payment status. Repeating request for the same payment should be used no more than once in 10 minutes.
-
-In case of non-fatal [error](#tech_error) or non-final [payment status](#statuses) received in response to the request, the Agent’s system should repeat the request.
-
-Fatal errors mean that sending a secondary request with the same parameters will result in the same error.
-
-Fatal errors are often caused by invalid configuration and require manual intervention. In case of fatal error, the Agent’s system may either keep repeating requests, or pause repeating the request until the configuration is corrected. Agent’s system needs not to deny payment as transaction status is unknown on request processing error. Transaction status information is inaccessible in case of these errors, so the Agent should not denies the payment on its side.
-
-In case of network error (connection or response timeout) or HTTP error (HTTP status code other than `200`, or empty HTTP response), incorrect XML-documents (no required tag/attribute) the Agent’s system should repeat the request. Transaction status information is inaccessible in case of these errors, so the Agent should not reject the payment on its side.
+<aside class="notice">The request provides current payment status. Repeating request for the same payment should be used no more than once in 10 minutes.</aside>
 
 ## Request format
 
@@ -31,7 +23,7 @@ In case of network error (connection or response timeout) or HTTP error (HTTP st
       <payment>
         <transaction-number>12345678</transaction-number>
         <to>
-             <account-number>79181234567</account-number>
+          <account-number>79181234567</account-number>
         </to>
       </payment>
     </status>
@@ -51,6 +43,14 @@ Tag|Description
 *to/account-number* | QIWI Wallet user ID, i.e. the mobile phone number in international format
 
 ## Response format
+
+In case of non-fatal [error](#tech_error) or non-final [payment status](#statuses) received in response to the request, the Agent’s system should repeat the request.
+
+[Fatal errors](#tech_error) mean that sending a secondary request with the same parameters will result in the same error. Fatal errors are often caused by invalid configuration and require manual intervention. In case of fatal error, the Agent’s system may either keep repeating requests, or pause repeating the request until the configuration is corrected. Agent’s system needs not to deny payment as transaction status is unknown on request processing error. Transaction status information is inaccessible in case of these errors, so the Agent should not denies the payment on its side.
+
+In case of network error (connection or response timeout) or HTTP error (HTTP status code other than `200`, or empty HTTP response), incorrect XML-documents (no required tag/attribute) the Agent’s system should repeat the request. Transaction status information is inaccessible in case of these errors, so the Agent should not reject the payment on its side.
+
+<aside class="success">If you are not sure how to interpret API response, address to our Support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>.</aside>
 
 ### Successful request processing
 
