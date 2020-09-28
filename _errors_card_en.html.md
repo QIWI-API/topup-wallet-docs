@@ -34,13 +34,13 @@ If there are errors appeared that is not described in this table please contact 
 
 # QIWI Wallet Error Codes {#tech_error}
 
-Error code|Description|Fatal?
-----|------|---------
-0|No errors| Inapplicable
-13|Repeat the request in a minute|\-
-150|Authorization error. Make sure that login and password are correct and repeat the request |\+
-300|Unknown error. Repeat the request|\-
-339|Sender IP address blocked|\+
+Error code|Description
+----|------
+0|No errors
+13|Repeat the request in a minute
+150|Authorization error. Make sure that login and password are correct and repeat the request 
+300|Unknown error. Repeat the request
+339|Sender IP address blocked
 
 If there are errors appeared that is not described in this table please contact QIWI Wallet technical support: <a href="mailto:bss@qiwi.com">bss@qiwi.com</a>.
 
