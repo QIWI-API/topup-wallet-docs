@@ -85,7 +85,7 @@ In case of fatal error, the Agent’s system may either keep repeating requests,
 	</payment>
 	<balances>
 		<balance code="428">0.00</balance>
-		<balance code="643">200</balance>
+		<balance code="643">200.00</balance>
 		<balance code="840">12.20</balance>
 	</balances>
 </response>

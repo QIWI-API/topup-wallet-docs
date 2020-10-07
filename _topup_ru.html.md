@@ -28,7 +28,7 @@
        <ccy>RUB</ccy>
      </from>
      <to>
-       <amount>15.00</amount>
+       <amount>1115.00</amount>
        <ccy>RUB</ccy>
        <service-id>99</service-id>
        <account-number>79181234567</account-number>
@@ -77,19 +77,19 @@
 <result-code fatal="false">0</result-code>
 <payment status='60' txn_id='6060' transaction-number='12345678' result-code='0' message='Ok' msg='Ok' final-status='true' fatal-error='false' txn-date='02.03.2011 14:35:46'  >
   <from>
-    <amount>15.00</amount>
+    <amount>1115.00</amount>
     <ccy>643</ccy>
   </from>
   <to>
     <service-id>99</service-id>
-    <amount>15.00</amount>
+    <amount>1000.00</amount>
     <ccy>643</ccy>
     <account-number>79181234567</account-number>
   </to>
 </payment>
 <balances>
 <balance code="428">0.00</balance>
-<balance code="643">200</balance>
+<balance code="643">200.00</balance>
 <balance code="840">12.20</balance>
 </balances>
 </response>

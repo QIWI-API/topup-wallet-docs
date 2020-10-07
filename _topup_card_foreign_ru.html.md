@@ -69,7 +69,7 @@
 *from/service-id* | Идентификатор источника (канала) пополнения (необязательный параметр). Параметр используется в случае необходимости разделения потоков пополнения, сохраняя единый баланс агента.
 *to*|Группирующий тег, содержит информацию о платеже
 *to/amount* | Сумма к зачислению на карту
-*to/service-id* | Идентификатор сервиса, на который производится зачисление средств при выплате (константа: `34020`)
+*to/service-id* | Идентификатор сервиса, на который производится зачисление средств при выплате (константа: `36655`)
 *to/account-number* | Номер карты Visa / MasterCard (без пробелов) для зачисления средств при выплате. Только карты, эмитированные зарубежными кредитными организациями.
 *to/ccy* | Валюта выплаты (только `RUB`, `USD`, `EUR`).
 *to/extra name="comment"* | Комментарий к платежу
@@ -96,19 +96,19 @@
 <result-code fatal="false">0</result-code>
 <payment status='60' txn_id='6060' transaction-number='12345678' result-code='0' message='Ok' msg='Ok' final-status='true' fatal-error='false' txn-date='02.03.2011 14:35:46'  >
   <from>
-    <amount>15.00</amount>
+    <amount>1115.00</amount>
     <ccy>643</ccy>
   </from>
   <to>
-    <service-id>34020</service-id>
-    <amount>15.00</amount>
+    <service-id>36655</service-id>
+    <amount>955.00</amount>
     <ccy>643</ccy>
     <account-number>4111********1123</account-number>
   </to>
 </payment>
 <balances>
 <balance code="428">0.00</balance>
-<balance code="643">200</balance>
+<balance code="643">200.00</balance>
 <balance code="840">12.20</balance>
 </balances>
 </response>
