@@ -1,4 +1,4 @@
-# Выплаты на банковские карты {#payment_card}
+# Выплаты на карты банков РФ {#payment_card}
 
 ###### Последнее обновление: 2018-11-01
 
@@ -71,7 +71,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <response>
 <result-code fatal="false">0</result-code>
-<payment status='60' txn_id='6060' transaction-number='12345678' result-code='0' final-status='true' fatal-error='false' txn-date='02.03.2011 14:35:46'  >
+<payment status='60' txn_id='6060' transaction-number='12345678' result-code='0' message='Ok' msg='Ok' final-status='true' fatal-error='false' txn-date='02.03.2011 14:35:46'  >
   <from>
     <amount>1115.00</amount>
     <ccy>643</ccy>

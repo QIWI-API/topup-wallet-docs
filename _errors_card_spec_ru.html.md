@@ -70,7 +70,16 @@ API возвращает статусы из следующих диапазон
 `fatal`|Логическое значение (`true/false`)
 `exist`|`0/1`
 `income_wire_transfer`|`0/1`
-`"password"`|Строка символов
-`"comment"`|Строка символов (до 1000 символов)
-`"phone"`|Номер телефона в международном формате без лидирующего знака `+`
 `"deposit-possible"`|`0/1`
+`name="password"`|Строка символов
+`name="comment"`|Строка символов (до 1000 символов)
+`name="phone"`|Номер телефона в международном формате без лидирующего знака `+`
+`name="source_first_name"` | Строка буквенных символов
+`name="source_last_name"` | Строка буквенных символов 
+`name="source_address"` | Строка символов
+`name="source_city"`| Строка символов
+`name="source_country_code"` | Строка буквенных символов
+`name="source_zip_code"` |Целое положительное число
+`name="source_resident"` |Целое положительное число
+`name="source_birthday"` | Дата в формате: `дд.мм.гггг`
+`name="target_card_holder"` | Строка буквенных символов
