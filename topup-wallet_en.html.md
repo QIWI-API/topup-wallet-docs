@@ -72,8 +72,6 @@ When using [client certificate](#cert) for requests authentication, the Agent’
 
 `https://private-api.qiwi.com/xml/topup.jsp`
 
-<aside class="notice">To get access to the test environment, contact your QIWI support manager.</aside>
-
 Agent must make decision on successful or unsuccessful payment processing based on transaction status in QIWI Wallet system.
 
 Agent must assign a unique identifier for each payment completely characterized by a set of parameters: amount, currency, QIWI Wallet user account, service identifier.
