@@ -14,7 +14,7 @@
 
 ~~~xml
 <?xml version="1.0" encoding="utf-8"?>
-<request v="2">
+<request>
   <request-type>pay</request-type>
   <terminal-id>123</terminal-id>
   <extra name="password">***</extra>
