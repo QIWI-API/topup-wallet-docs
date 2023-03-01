@@ -90,7 +90,7 @@ To top up user account in QIWI Wallet, the Agent specifies user’s mobile phone
 
 # Implementation Guidelines {#guidelines}
 
-The interaction of the Agent’s system with QIWI Wallet should go as follows.
+The scenario of the QIWI Wallet top-up should go as follows:
 
 <div class="mermaid">
 sequenceDiagram
@@ -118,10 +118,31 @@ end
 end
 </div>
 
-<!--![Top-up logic to be implemented by the Agent’s system](/images/topup_flow_en.png)-->
+The Agent's system should implement the logic shown in the flowchart below.
 
-<!-- 
-The Agent system should implement the logic shown in the flowchart below. Some details are omitted from the flowchart for readability, particularly retrying requests to QIWI Wallet in case of non-fatal error.
-
-![Interaction between Agent and QIWI Wallet](/images/topup_en.png)
--->
+<div class="mermaid">
+graph TB
+    ST(BEGIN QIWI WALLET TOP-UP) -.- A
+    A[Check Payment Possibility Request] --> B{Payment<br>is possible?}
+    B -->|yes| C{User ID exists??}
+    B -->|no| G[[Payment NOT processed]]
+    C -->|yes| K
+    C -->|no| H{Create user<br>and register payment?}
+    H -->|yes| K[QIWI Wallet Top-up Request]
+    H -->|no, if no such user, then<br>do not process payment| G
+    K -->KN{Network error?}
+    KN & KER -->|yes| KW([Wait 10 minutes or more])
+    KER -->|no| PFS
+    KN -->|no| KER{Request processing error?}
+    PFS -->|final-status=true| RS{'status' attribute value?}
+    PFS -->|final-status=false| MR
+    KW --> MR[Payment Status Check Request]
+    RS -->|> 100| G
+    RS -->|=60| X[[Payment processed successfully]]
+    MR --> MER{Network error?}
+    MER -->|no| MW{Request processing error?}
+    MW & MER -->|yes| KW
+    MW -->|no| PT{Is there 'payment' tag<br>with the 'txn_id' transaction number<br>in response?}
+    PT -->|yes| PFS{'final-status' attribute?}
+    PT -->|no| KW
+</div>
