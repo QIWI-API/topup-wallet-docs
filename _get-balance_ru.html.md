@@ -1,6 +1,6 @@
 # Запрос баланса контрагента {#get-balance}
 
-###### Последнее обновление: 2017-11-14 | [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_get-balance_ru.html.md)
+###### [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_get-balance_ru.html.md)
 
 Данный запрос возвращает текущий баланс по агентскому договору в сервисе QIWI Кошелек.
 

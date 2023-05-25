@@ -25,9 +25,9 @@ includes:
 
 ---
 
-# Introduction {#introduction}
+# General Information {#introduction}
 
-###### Last update: 2020-07-10 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/topup-wallet_en.html.md)
+###### [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/topup-wallet_en.html.md)
 
 Top-Up API is intended for merchants or payment service providers (PSP) who need to send money to QIWI Wallet users.
 

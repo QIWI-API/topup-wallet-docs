@@ -1,6 +1,6 @@
 # SSL Authorization {#auth}
 
-###### Last update: 2019-11-11 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_authorization_en.html.md)
+###### [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_authorization_en.html.md)
 
 Besides identifier/password authorization, two other authorization types may be also used:
 

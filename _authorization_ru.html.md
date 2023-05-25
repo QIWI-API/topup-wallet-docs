@@ -1,6 +1,6 @@
 # Аутентификация по SSL {#auth}
 
-###### Последнее обновление: 2019-11-11 | [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_authorization_ru.html.md)
+###### [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_authorization_ru.html.md)
 
 Помимо аутентификации по логину и паролю, может быть использована [аутентификация по сертификатам](#ssl-auth), а также [электронная цифровая подпись](#sign-auth).
 

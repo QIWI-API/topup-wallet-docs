@@ -1,6 +1,6 @@
 # Transaction Status Check {#status}
 
-###### Last update: 2017-11-14 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_topup-status_en.html.md)
+###### [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_topup-status_en.html.md)
 
 When registered in QIWI Wallet system, a payment passes through a set of states with different statuses. Each status is specified by its unique numeric identifier. Payment processing is treated as complete when it reaches a final status. All possible status codes are listed in [Payment statuses](#statuses).
 

@@ -1,6 +1,6 @@
 # Check Payment Possibility {#check-deposit}
 
-###### Last update: 2020-07-14 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_check-deposit_en.html.md)
+###### [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_check-deposit_en.html.md)
 
 This API method checks whether a top-up payment can go ahead. The Agent should check if the payment can be processed by the API.
 

@@ -1,7 +1,5 @@
 # Payment Card Top Up Request {#payment_card}
 
-###### Last update: 2019-11-15
-
 Payment card top-ups are payment transactions within QIWI Wallet system that debit Agent accounts and credit customer's payment card account in international payment systems VISA, MasterCard and MIR issued by the banks of Russian Federation. Payment system is determined by the card number.
 
 The top-up request initiates the payment lifecycle. During the lifecycle, the payment proceeds through several statuses. All payment transactions, including top-up requests, are processed asynchronously. A request that is accepted successfully may then fail. The Agent’s system should query [current payment status](#status) from QIWI Wallet periodically (no more than once in 10 minutes), until a final status code, successful or unsuccessful, is received.

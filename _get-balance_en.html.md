@@ -1,6 +1,6 @@
 # Balance Check Request {#get-balance}
 
-###### Last update: 2017-11-14 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_get-balance_ru.html.md)
+###### [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_get-balance_ru.html.md)
 
 This API method helps Agent to check the balance of the Agent’s account in QIWI Wallet system.
 

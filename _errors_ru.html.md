@@ -1,6 +1,6 @@
 # Статусы платежей {#statuses}
 
-###### Последнее обновление: 2020-07-10 | [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_errors_ru.html.md)
+###### [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_errors_ru.html.md)
 
 Для платежных запросов ([пополнение кошелька](#payment), [проверка статуса платежа](#status)) API возвращает статус платежа в атрибуте `status` тега `<payment>`.
 

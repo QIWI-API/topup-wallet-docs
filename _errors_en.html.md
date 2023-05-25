@@ -1,6 +1,6 @@
 # Payment Statuses {#statuses}
 
-###### Last update: 2020-07-10 | [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_errors_en.html.md)
+###### [Edit on GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_errors_en.html.md)
 
 QIWI Wallet server may return payment status from the following ranges:
 

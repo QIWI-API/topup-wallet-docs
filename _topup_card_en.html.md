@@ -1,6 +1,4 @@
-# Payment Card Top Up Request {#payment_card}
-
-###### Last update: 2019-11-15
+# Payment Card Top Up {#payment_card}
 
 Payment card top-ups are payment transactions within QIWI Wallet system that debit Agent accounts and credit customer's payment card account in international payment systems VISA, MasterCard and MIR issued by the banks of Russian Federation. Payment system is determined by the card number.
 

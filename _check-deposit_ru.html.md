@@ -1,6 +1,6 @@
 # Проверка возможности проведения платежа {#check-deposit}
 
-###### Последнее обновление: 2020-07-14 | [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_check-deposit_ru.html.md)
+###### [Редактировать на GitHub](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_check-deposit_ru.html.md)
 
 Данным запросом вы должны проверить, возможно ли проведение платежа для пополнения учетной записи клиента в системе QIWI Wallet.
 

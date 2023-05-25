@@ -1,14 +1,14 @@
-# QIWI Wallet Top-Up Request {#payment}
+# QIWI Wallet Top-Up {#payment}
 
-###### Last update: 2020-07-10 | [Edit on Github](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_topup_en.html.md)
+###### [Edit on Github](https://github.com/QIWI-API/topup-wallet-doc/blob/master/_topup_en.html.md)
 
-QIWI Wallet top-ups are payment transactions within QIWI Wallet system that debit Agent account and credit user QIWI Wallet account.
+QIWI Wallet top-ups are payment transactions within QIWI Wallet system that debit Agent account and credit user QIWI Wallet account. **You have to [check if the top-up is possible](#check-deposit) before the request**.
 
 If the specified user account does not exist, QIWI Wallet system creates it automatically while processing the top-up request.
 
-The Agent must specify the type of funds that is received from the client - cash or non-cash funds.
+**The Agent must specify the type of funds that is received from the client — cash or non-cash funds, in `extra name="income_wire_transfer"` parameter**.
 
-The top-up request initiates the payment lifecycle. During the lifecycle, the payment proceeds through several statuses. All payment transactions, including top-up requests, are processed asynchronously. A request that is accepted successfully may then fail. The Agent’s system should query [current payment status](#status) from QIWI Wallet periodically (no more than once in 10 minutes), until a final status code, successful or unsuccessful, is received.
+The top-up request initiates the payment lifecycle. During the lifecycle, the payment proceeds through several statuses. All payment transactions, including top-up requests, are processed asynchronously. A request that is accepted successfully may then fail. The Agent’s system should query current [payment status](#status) from QIWI Wallet periodically (no more than once in 10 minutes), until a final status code, successful or unsuccessful, is received.
 
 ## Request format {#payment-req}
 
